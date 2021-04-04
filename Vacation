@@ -1,0 +1,91 @@
+using System;
+
+namespace _03.Vacation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double money = double.Parse(Console.ReadLine());
+            string grupa = Console.ReadLine();
+            string day = Console.ReadLine();
+
+            double price = 0;
+
+            if(grupa == "Students")
+            {
+                switch (day)
+                {
+                    case "Friday":
+                        price = 8.45;
+                        break;
+
+                    case "Saturday":
+                        price = 9.80;
+                        break;
+
+                    case "Sunday":
+                        price = 10.46;
+                        break;
+
+                    default:
+                        break;
+                }
+                if(money >= 30)
+                {
+                    price *= 0.85;
+                }
+            }
+            else if(grupa == "Business")
+            {
+                switch (day)
+                {
+                    case "Friday":
+                        price = 10.90;
+                        break;
+
+                    case "Saturday":
+                        price = 15.60;
+                        break;
+
+                    case "Sunday":
+                        price = 16;
+                        break;
+                    default:
+                        break;
+                }
+                if(money >= 100)
+                {
+                    price = 10;
+                }
+            }
+            else if(grupa == "Regular")
+            {
+                switch (day)
+                {
+                    case "Friday":
+                        price = 15;
+                        break;
+
+                    case "Saturday":
+                        price = 20;
+                        break;
+
+                    case "Sunday":
+                        price = 22.50;
+                        break;
+
+                    default:
+                        break;
+                }
+                if(money >=10 && money <= 20)
+                {
+                    price *= 0.95;
+                }
+            }
+            double goodJob = money * price;
+
+            Console.WriteLine($"Total price: {goodJob:f2}");
+        }
+    }
+}

@@ -1,0 +1,43 @@
+using System;
+
+namespace _06.Strong_Number
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            int invoid = number;
+
+            int current = 0;
+            int factorialNumber = 0;
+
+            while (invoid != 0)
+            {
+                current = invoid % 10;
+                invoid /= 10;
+
+                int factorial = 1;
+
+                for (int i = 1; i <= current; i++)
+                {
+                    factorial *= i;
+                }
+                factorialNumber += factorial;
+
+            }
+            string goodJob = "";
+
+            if(factorialNumber == number)
+            {
+                goodJob = "yes";
+            }
+            else
+            {
+                goodJob = "no";
+            }
+            Console.WriteLine(goodJob);
+        }
+    }
+}
+

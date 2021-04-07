@@ -1,0 +1,21 @@
+double money = double.Parse(Console.ReadLine());
+            int students = int.Parse(Console.ReadLine());
+            double priceLightsabers = double.Parse(Console.ReadLine());
+            double priceRobes = double.Parse(Console.ReadLine());
+            double priceBelts = double.Parse(Console.ReadLine());
+
+            double goodJob = 0;
+
+            int belts = students / 6;
+            double totalResult = Math.Ceiling((students * 0.10) + students);
+
+            goodJob = (totalResult * priceLightsabers) + ((students - belts) * priceRobes) + (students * priceBelts);
+
+            if(goodJob <= money)
+            {
+                Console.WriteLine($"The money is enough - it would cost {goodJob:f2}lv.");
+            }
+            else if(goodJob > money)
+            {
+                Console.WriteLine($"John will need {money - goodJob:f2}lv more.");
+            }

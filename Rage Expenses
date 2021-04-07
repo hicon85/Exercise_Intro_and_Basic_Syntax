@@ -1,0 +1,24 @@
+using System;
+
+namespace _10.Rage_Expenses
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int lostGames = int.Parse(Console.ReadLine());
+            double headset = double.Parse(Console.ReadLine());
+            double mouse = double.Parse(Console.ReadLine());
+            double keyboard = double.Parse(Console.ReadLine());
+            double displey = double.Parse(Console.ReadLine());
+
+            double moneyCrashesh = headset * (lostGames / 2);
+            moneyCrashesh += mouse * (lostGames / 3);
+            moneyCrashesh += keyboard * (lostGames / 6);
+            moneyCrashesh += displey * (lostGames / 12);
+
+            Console.WriteLine($"Rage expenses: {moneyCrashesh:f2} lv.");
+            
+        }
+    }
+}
